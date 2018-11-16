@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Runtime/Engine/Classes/GameFramework/ProjectileMovementComponent.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "OMFProjectile.generated.h"
@@ -10,8 +11,8 @@ UCLASS()
 class ORCMUSTFRY_API AOMFProjectile : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AOMFProjectile();
 
@@ -19,27 +20,31 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	
+
 	//Methods
 public:
 
 	void InitProjectile(FVector Location, FVector ForwardWeapon);
-	
+
 	UFUNCTION()
-	void OnProjectileHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit );
+		void OnProjectileHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 	//Attributes
 public:
 
 	UPROPERTY(Category = OMFWeapon, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	class UStaticMeshComponent* MeshComponent;
+		class UStaticMeshComponent* MeshComponent;
 
 	UPROPERTY(Category = OMFWeapon, EditAnywhere)
-	float Speed;
+		float Speed;
+
+	// Projectile movement component.
+	UPROPERTY(VisibleAnywhere, Category = Movement)
+		class UProjectileMovementComponent* ProjectileMovementComponent;
 
 	//Attributes
 protected:

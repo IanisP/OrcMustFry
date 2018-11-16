@@ -3,8 +3,10 @@
 #include "OMFWeaponRanged.h"
 
 #include "OMFProjectile.h"
-
+//#include "OMFArrow.h"
 #include "Components/StaticMeshComponent.h"
+
+#include "Engine/World.h"
 
 // Called when the game starts or when spawned
 void AOMFWeaponRanged::BeginPlay()

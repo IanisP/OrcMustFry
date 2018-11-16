@@ -23,17 +23,28 @@ Mamouchka : rocket controlled by the player when fired, exploding on hit or on c
 Traps:
 
 SpikeTrap : inflict damage when an ennemy walks on it
+	//Attack() when in triggerBox if CD <= 0
 TarTrap : slow an ennemy walking on it
+	//Attack() when in triggerBox (s i h ote a ote f r s)
 SwingMace : inflict damage on CD (animation like a melee weapon)
+	//Attack() when in triggerBox if CD <= 0
 ArrowWall : fire multiple arrows when an ennemy walks in front of it (system to generates the number of projectiles
-asked by the variable designer)
+	asked by the variable designer)
+	//Fire() when in triggerBox if CD <= 0
 BoomBarrel : explode on damaged
+	//Attack() when hit
 Ballista : shoot arrow to a target (projectile follow target)
+	//Fire() when in certain distance if CD <= 0
 Bomber : shoot explosive to a position (system to generates the number of projectiles asked by the variable designer)
+	//Fire() when in certain distance if CD <= 0
 IceTower : slow all ennemies in range on CD
+	//Attack() when in triggerBox if CD <= 0
 FireTower : burn all ennemies in range on CD
+	//Attack() when in triggerBox if CD <= 0
 BladeTornado : damage all ennemies in range when reloaded
+	//Attack() when in triggerBox if CD <= 0
 Blizzard : stop and damage all ennemies in range when reloaded
+	//Attack() when in triggerBox if CD <= 0
 
 ActorSequenceComponent (optional) : Component existing in a plugin, you can use it to implement animation for 
 melee weapons and traps if you want
